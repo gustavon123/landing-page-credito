@@ -14,7 +14,7 @@
     }
 
     body {
-      background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1588776814546-ec76fd3f2433') no-repeat center center/cover;
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.imgur.com/YJIoU7s.jpg') no-repeat center center/cover;
       color: #fff;
       min-height: 100vh;
       display: flex;
@@ -25,10 +25,10 @@
     }
 
     .box {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       padding: 30px;
       border-radius: 15px;
-      max-width: 420px;
+      max-width: 440px;
       width: 100%;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
@@ -96,22 +96,60 @@
     .oculto {
       display: none;
     }
+
+    .logos {
+      width: 100%;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .logos img {
+      width: 60px;
+      height: auto;
+    }
+
+    .bens {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .bens img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
   <div class="box">
     <h1>Solicite seu Crédito Online</h1>
     <p>Rápido, sem burocracia e direto no WhatsApp. 100% confidencial.</p>
+
+    <div class="logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Banco_do_Brasil_logo.svg" alt="Banco do Brasil">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Logo_Bradesco.svg" alt="Bradesco">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Ita%C3%BA.svg" alt="Itaú">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_Caixa_Econ%C3%B4mica_Federal.svg" alt="Caixa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Santander_Logo.svg" alt="Santander">
+    </div>
+
+    <div class="bens">
+      <img src="https://i.imgur.com/MEyfc9H.jpg" alt="Bens móveis e imóveis">
+    </div>
+
     <form id="creditoForm">
       <input type="text" id="nome" placeholder="Nome completo" required>
       <input type="tel" id="telefone" placeholder="WhatsApp com DDD" required>
       <input type="number" id="valor" placeholder="Valor desejado (R$)" required>
-      <input type="text" id="finalidade" placeholder="Finalidade do crédito" required>
+      <input type="text" id="finalidade" placeholder="Finalidade do crédito (ex: veículo, imóvel, pessoal)" required>
       <input type="text" class="oculto" id="verificacao" placeholder="verificação">
-
       <button type="submit">Simular Agora pelo WhatsApp</button>
     </form>
-    <p class="depoimento">“Consegui meu crédito em menos de 24h! Atendimento excelente.” – Cliente Verificado</p>
+
+    <p class="depoimento">Atendimento rápido e seguro.</p>
   </div>
 
   <a class="whatsapp-button" href="https://wa.me/5561992918819" target="_blank">🛋</a>
@@ -131,7 +169,7 @@
         return;
       }
 
-      const mensagem = `Olá! Me chamo ${nome} e estou interessado(a) em um crédito no valor de R$${valor}, para ${finalidade}. Meu contato é ${telefone}.`;
+      const mensagem = `Olá! Me chamo ${nome} e estou interessado(a) em um crédito do tipo ${finalidade}, no valor de R$${valor}. Meu contato é ${telefone}.`;
       const link = `https://wa.me/5561992918819?text=${encodeURIComponent(mensagem)}`;
 
       window.open(link, '_blank');
@@ -139,3 +177,4 @@
   </script>
 </body>
 </html>
+
