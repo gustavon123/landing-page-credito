@@ -1,63 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Solicite Seu Crédito Agora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crédito Rápido e Seguro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
     }
 
-    .container {
-      background: #fff;
+    body {
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1588776814546-ec76fd3f2433') no-repeat center center/cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.7);
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 90%;
+      border-radius: 15px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    h2 {
+    h1 {
+      font-size: 28px;
       text-align: center;
-      color: #333;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
+      color: #25D366;
     }
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     input {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
     }
 
     button {
-      margin-top: 20px;
       width: 100%;
-      padding: 12px;
+      padding: 14px;
+      margin-top: 20px;
+      background: #25D366;
       border: none;
-      background-color: #25D366;
-      color: white;
+      border-radius: 8px;
       font-size: 16px;
-      border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
+      color: #000;
     }
 
-    button:hover {
-      background-color: #1ebe5d;
+    .depoimento {
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
     }
 
     .oculto {
@@ -66,17 +99,22 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Solicite seu Crédito</h2>
+  <div class="box">
+    <h1>Solicite seu Crédito Online</h1>
+    <p>Rápido, sem burocracia e direto no WhatsApp. 100% confidencial.</p>
     <form id="creditoForm">
-      <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required />
-      <input type="tel" name="telefone" id="telefone" placeholder="Seu WhatsApp com DDD" required />
-      <input type="number" name="valor" id="valor" placeholder="Valor desejado (R$)" required />
-      <input type="text" name="finalidade" id="finalidade" placeholder="Finalidade do crédito" required />
-      <input type="text" class="oculto" name="verificacao" id="verificacao" placeholder="Campo oculto"/>
-      <button type="submit">Solicitar pelo WhatsApp</button>
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="tel" id="telefone" placeholder="WhatsApp com DDD" required>
+      <input type="number" id="valor" placeholder="Valor desejado (R$)" required>
+      <input type="text" id="finalidade" placeholder="Finalidade do crédito" required>
+      <input type="text" class="oculto" id="verificacao" placeholder="verificação">
+
+      <button type="submit">Simular Agora pelo WhatsApp</button>
     </form>
+    <p class="depoimento">“Consegui meu crédito em menos de 24h! Atendimento excelente.” – Cliente Verificado</p>
   </div>
+
+  <a class="whatsapp-button" href="https://wa.me/5561992918819" target="_blank">💬</a>
 
   <script>
     document.getElementById('creditoForm').addEventListener('submit', function(e) {
@@ -89,11 +127,11 @@
       const verificador = document.getElementById('verificacao').value.trim();
 
       if (verificador !== "") {
-        alert("Ação suspeita detectada. Tente novamente.");
+        alert("Ação bloqueada.");
         return;
       }
 
-      const mensagem = `Olá, me chamo ${nome}. Estou interessado em crédito no valor de R$${valor} para ${finalidade}. Meu WhatsApp é ${telefone}.`;
+      const mensagem = `Olá! Me chamo ${nome} e estou interessado(a) em um crédito no valor de R$${valor}, para ${finalidade}. Meu contato é ${telefone}.`;
       const link = `https://wa.me/5561992918819?text=${encodeURIComponent(mensagem)}`;
 
       window.open(link, '_blank');
@@ -101,4 +139,4 @@
   </script>
 </body>
 </html>
-Melhorando layout e segurança da landing page
+
