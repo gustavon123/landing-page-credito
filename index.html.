@@ -1,89 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crédito Rápido e Sem Burocracia</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicite Seu Crédito Agora</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #f7f7f7;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      margin: 0;
     }
+
     .container {
-      background: white;
-      padding: 2em;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
       max-width: 400px;
-      width: 100%;
+      width: 90%;
     }
-    h1 {
-      font-size: 1.5em;
-      margin-bottom: 1em;
-      color: #333;
+
+    h2 {
       text-align: center;
+      color: #333;
+      margin-bottom: 25px;
     }
+
     label {
       display: block;
-      margin-top: 1em;
+      margin-top: 15px;
       font-weight: bold;
     }
-    input, select, button {
+
+    input {
       width: 100%;
-      padding: 0.7em;
-      margin-top: 0.5em;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 4px;
     }
+
     button {
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
       border: none;
+      background-color: #25D366;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
     }
+
     button:hover {
-      background-color: #218838;
+      background-color: #1ebe5d;
+    }
+
+    .oculto {
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Solicite seu Crédito Agora!</h1>
+    <h2>Solicite seu Crédito</h2>
     <form id="creditoForm">
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" name="nome" required>
-
-      <label for="telefone">WhatsApp:</label>
-      <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
-
-      <label for="valor">Valor desejado:</label>
-      <input type="text" id="valor" name="valor" required>
-
-      <label for="finalidade">Finalidade do crédito:</label>
-      <input type="text" id="finalidade" name="finalidade" required>
-
-      <button type="submit">Solicitar Agora</button>
+      <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required />
+      <input type="tel" name="telefone" id="telefone" placeholder="Seu WhatsApp com DDD" required />
+      <input type="number" name="valor" id="valor" placeholder="Valor desejado (R$)" required />
+      <input type="text" name="finalidade" id="finalidade" placeholder="Finalidade do crédito" required />
+      <input type="text" class="oculto" name="verificacao" id="verificacao" placeholder="Campo oculto"/>
+      <button type="submit">Solicitar pelo WhatsApp</button>
     </form>
   </div>
 
   <script>
     document.getElementById('creditoForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const telefone = document.getElementById('telefone').value;
-      const valor = document.getElementById('valor').value;
-      const finalidade = document.getElementById('finalidade').value;
 
-      const mensagem = `Olá, me chamo ${nome}. Estou interessado em crédito no valor de ${valor} para ${finalidade}. Meu WhatsApp é: ${telefone}`;
-      const whatsappURL = `https://wa.me/55SEUNUMERO?text=${encodeURIComponent(mensagem)}`;
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const valor = document.getElementById('valor').value.trim();
+      const finalidade = document.getElementById('finalidade').value.trim();
+      const verificador = document.getElementById('verificacao').value.trim();
 
-      window.open(whatsappURL, '_blank');
+      if (verificador !== "") {
+        alert("Ação suspeita detectada. Tente novamente.");
+        return;
+      }
+
+      const mensagem = `Olá, me chamo ${nome}. Estou interessado em crédito no valor de R$${valor} para ${finalidade}. Meu WhatsApp é ${telefone}.`;
+      const link = `https://wa.me/5561992918819?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(link, '_blank');
     });
   </script>
 </body>
 </html>
+Melhorando layout e segurança da landing page
