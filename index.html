@@ -3,86 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crédito Fácil e Seguro</title>
+  <title>Crédito Rápido e Seguro</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
-      background: url('https://i.imgur.com/YwUn3LP.jpg') no-repeat center center fixed;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1588776814546-bc89e8f6c384?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
     }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-    }
     .container {
-      position: relative;
-      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10% 5%;
       text-align: center;
-      padding: 5% 10%;
     }
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
+      color: #00ffae;
     }
     p {
-      font-size: 1.5em;
-      margin-bottom: 30px;
+      font-size: 1.4em;
+      line-height: 1.6em;
+      margin-bottom: 40px;
+    }
+    .highlight {
+      color: #00ffae;
+      font-weight: bold;
     }
     .whatsapp-button {
-      background-color: #25D366;
+      background: #25D366;
+      padding: 15px 30px;
+      font-size: 1.3em;
       color: white;
-      padding: 15px 25px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 10px;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 10px;
+      transition: 0.3s ease;
     }
     .whatsapp-button:hover {
       background-color: #1ebc59;
     }
-    .logos {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    .benefits {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      color: #ccc;
     }
-    .logos img {
-      height: 50px;
-      filter: brightness(0) invert(1);
+    .benefit {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
     }
-    .footer-img {
-      margin-top: 50px;
-      max-width: 100%;
-      height: auto;
+    .benefit h3 {
+      color: #00ffae;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
   <div class="container">
-    <h1>Consiga seu crédito com segurança</h1>
-    <p>Oferecemos crédito pessoal, crédito com garantia de imóvel, crédito com garantia de veículo e crédito para negativado.</p>
+    <h1>Soluções de Crédito sob Medida</h1>
+    <p>Conquiste <span class="highlight">crédito pessoal</span>, <span class="highlight">com garantia de imóvel ou veículo</span> e até mesmo <span class="highlight">para negativados</span>. Tudo com segurança, rapidez e atendimento humano e confiável.</p>
     <a class="whatsapp-button" href="https://wa.me/5561992918819" target="_blank">Atendimento rápido e seguro</a>
 
-    <div class="logos">
-      <img src="https://logodownload.org/wp-content/uploads/2014/10/itau-logo-1-1.png" alt="Itaú">
-      <img src="https://logodownload.org/wp-content/uploads/2014/10/bradesco-logo-1-1.png" alt="Bradesco">
-      <img src="https://logodownload.org/wp-content/uploads/2019/08/caixa-economica-federal-logo-1.png" alt="Caixa">
-      <img src="https://logodownload.org/wp-content/uploads/2014/10/banco-do-brasil-logo-1.png" alt="Banco do Brasil">
-      <img src="https://logodownload.org/wp-content/uploads/2014/10/santander-logo-1.png" alt="Santander">
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Processo 100% Online</h3>
+        <p>Solicite do seu celular, sem burocracia ou papelada desnecessária.</p>
+      </div>
+      <div class="benefit">
+        <h3>Simule Sem Compromisso</h3>
+        <p>Veja o quanto pode conseguir antes de enviar qualquer documento.</p>
+      </div>
+      <div class="benefit">
+        <h3>Confiança e Agilidade</h3>
+        <p>Equipe especializada pronta para te atender com transparência.</p>
+      </div>
     </div>
-
-    <img class="footer-img" src="https://i.imgur.com/OiObp5q.jpg" alt="Bens móveis e imóveis">
   </div>
 </body>
 </html>
-
