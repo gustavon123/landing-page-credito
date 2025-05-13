@@ -3,178 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crédito Rápido e Seguro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Crédito Fácil e Seguro</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.imgur.com/YJIoU7s.jpg') no-repeat center center/cover;
+      font-family: Arial, sans-serif;
       color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 15px;
+      background: url('https://i.imgur.com/YwUn3LP.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
-
-    .box {
-      background: rgba(0,0,0,0.75);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 440px;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
     }
-
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 5% 10%;
+    }
     h1 {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 10px;
-      color: #25D366;
-    }
-
-    p {
-      font-size: 16px;
-      text-align: center;
+      font-size: 3em;
       margin-bottom: 20px;
     }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
+    p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
     }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 20px;
-      background: #25D366;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #000;
-    }
-
-    .depoimento {
-      font-style: italic;
-      font-size: 14px;
-      text-align: center;
-      margin-top: 20px;
-      color: #ccc;
-    }
-
     .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
       background-color: #25D366;
       color: white;
+      padding: 15px 25px;
+      font-size: 1.2em;
       border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
       text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
-
-    .oculto {
-      display: none;
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
     }
-
     .logos {
-      width: 100%;
-      margin: 20px auto;
+      margin-top: 40px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-
     .logos img {
-      width: 60px;
+      height: 50px;
+      filter: brightness(0) invert(1);
+    }
+    .footer-img {
+      margin-top: 50px;
+      max-width: 100%;
       height: auto;
-    }
-
-    .bens {
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .bens img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 12px;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Solicite seu Crédito Online</h1>
-    <p>Rápido, sem burocracia e direto no WhatsApp. 100% confidencial.</p>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Consiga seu crédito com segurança</h1>
+    <p>Oferecemos crédito pessoal, crédito com garantia de imóvel, crédito com garantia de veículo e crédito para negativado.</p>
+    <a class="whatsapp-button" href="https://wa.me/5561992918819" target="_blank">Atendimento rápido e seguro</a>
 
     <div class="logos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Banco_do_Brasil_logo.svg" alt="Banco do Brasil">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Logo_Bradesco.svg" alt="Bradesco">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Logo_Ita%C3%BA.svg" alt="Itaú">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_Caixa_Econ%C3%B4mica_Federal.svg" alt="Caixa">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Santander_Logo.svg" alt="Santander">
+      <img src="https://logodownload.org/wp-content/uploads/2014/10/itau-logo-1-1.png" alt="Itaú">
+      <img src="https://logodownload.org/wp-content/uploads/2014/10/bradesco-logo-1-1.png" alt="Bradesco">
+      <img src="https://logodownload.org/wp-content/uploads/2019/08/caixa-economica-federal-logo-1.png" alt="Caixa">
+      <img src="https://logodownload.org/wp-content/uploads/2014/10/banco-do-brasil-logo-1.png" alt="Banco do Brasil">
+      <img src="https://logodownload.org/wp-content/uploads/2014/10/santander-logo-1.png" alt="Santander">
     </div>
 
-    <div class="bens">
-      <img src="https://i.imgur.com/MEyfc9H.jpg" alt="Bens móveis e imóveis">
-    </div>
-
-    <form id="creditoForm">
-      <input type="text" id="nome" placeholder="Nome completo" required>
-      <input type="tel" id="telefone" placeholder="WhatsApp com DDD" required>
-      <input type="number" id="valor" placeholder="Valor desejado (R$)" required>
-      <input type="text" id="finalidade" placeholder="Finalidade do crédito (ex: veículo, imóvel, pessoal)" required>
-      <input type="text" class="oculto" id="verificacao" placeholder="verificação">
-      <button type="submit">Simular Agora pelo WhatsApp</button>
-    </form>
-
-    <p class="depoimento">Atendimento rápido e seguro.</p>
+    <img class="footer-img" src="https://i.imgur.com/OiObp5q.jpg" alt="Bens móveis e imóveis">
   </div>
-
-  <a class="whatsapp-button" href="https://wa.me/5561992918819" target="_blank">🛋</a>
-
-  <script>
-    document.getElementById('creditoForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const nome = document.getElementById('nome').value.trim();
-      const telefone = document.getElementById('telefone').value.trim();
-      const valor = document.getElementById('valor').value.trim();
-      const finalidade = document.getElementById('finalidade').value.trim();
-      const verificador = document.getElementById('verificacao').value.trim();
-
-      if (verificador !== "") {
-        alert("Ação bloqueada.");
-        return;
-      }
-
-      const mensagem = `Olá! Me chamo ${nome} e estou interessado(a) em um crédito do tipo ${finalidade}, no valor de R$${valor}. Meu contato é ${telefone}.`;
-      const link = `https://wa.me/5561992918819?text=${encodeURIComponent(mensagem)}`;
-
-      window.open(link, '_blank');
-    });
-  </script>
 </body>
 </html>
 
